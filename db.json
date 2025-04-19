@@ -1,0 +1,133 @@
+{
+  "users": [
+    {
+      "id": "c9a2",
+      "username": "admin",
+      "password": "$2b$10$SS4OqWfUuIVH4J/xp8JSke/oHu.rZL9Q8m7UaDWfVdV44UBz7MWDa",
+      "email": "admin@example.com",
+      "fullName": "Admin User",
+      "phone": "+91-9876543210",
+      "address": {
+        "street": "123 Market Street",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "380015",
+        "country": "India"
+      }
+    },
+    {
+      "id": "6sg2",
+      "username": "user1",
+      "password": "$2b$10$SS4OqWfUuIVH4J/xp8JSke/oHu.rZL9Q8m7UaDWfVdV44UBz7MWDa",
+      "email": "user@test.com",
+      "fullName": " User",
+      "phone": "+91-9376543210",
+      "address": {
+        "street": "Market 4-Street",
+        "city": "rajkot",
+        "state": "Gujarat",
+        "postalCode": "360003",
+        "country": "India"
+      }
+    },
+    {
+      "id": "0905",
+      "fullname": "admin",
+      "username": "admin2",
+      "password": "$2b$10$ZthXFicRW9cMW4BfI4JB4.SfgdeKfSglEDsgX7aUhQ5m7mZkB4i/a",
+      "email": "admin@test.com",
+      "phone": "9382048343",
+      "Faddress": {
+        "address": "fdnfnkfewfnefeenf",
+        "pincode": "394842",
+        "state": "GJ",
+        "city": "Halenda"
+      }
+    },
+    {
+      "id": "db36",
+      "fullname": "sfsa",
+      "username": "fas",
+      "password": "$2b$10$AcHdyMbtfRGmzGOkAtlpKecvpgFR53Ty0em5ABBlGm7wo4/DIjQs6",
+      "email": "edgda@ds.dgd",
+      "phone": "9546654645",
+      "Faddress": {
+        "address": "sdafsdfsdfsdf",
+        "pincode": "343243",
+        "state": "AS",
+        "city": "Bijni"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "title": "Wireless Headphones",
+      "description": "High quality wireless headphones with noise cancellation and long battery life.",
+      "price": "2999",
+      "stock": "25",
+      "category": "Electronics",
+      "brand": "SoundMax",
+      "rating": 5,
+      "images": [
+        "./src/assets/wirelessHeadphones.webp"
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Men's Casual Shirt",
+      "description": "Comfortable and stylish casual shirt for men, 100% cotton. available",
+      "price": "899",
+      "stock": "100",
+      "category": "Clothing",
+      "brand": "UrbanWear",
+      "rating": 1,
+      "images": [
+        "./src/assets/mans-tshirt.png"
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Smartphone - 128GB",
+      "description": "Latest model smartphone with high-speed processor, 128GB storage, and excellent camera.",
+      "price": "18999",
+      "stock": "50",
+      "category": "Mobiles",
+      "brand": "NextGen",
+      "rating": 5,
+      "images": [
+        "./src/assets/smartphone.png"
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Sports Shoes",
+      "description": "Lightweight and durable running shoes with breathable fabric.",
+      "price": "1499",
+      "stock": "40",
+      "category": "Footwear",
+      "brand": "RunnerX",
+      "rating": 3,
+      "images": [
+        "./src/assets/shoes.png"
+      ]
+    }
+  ],
+  "cart": [
+    {
+      "productId": "p001",
+      "productName": "Wooden Chair",
+      "quantity": 2,
+      "price": "1200",
+      "id": "be53"
+    }
+  ],
+  "wishlist": [
+    {
+      "productId": "p009",
+      "productName": "Modern Lamp",
+      "id": "a5b0"
+    }
+  ],
+  "role": "admin"
+}
