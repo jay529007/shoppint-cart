@@ -6,8 +6,8 @@ import { FaHeart } from "react-icons/fa";
 
 const ProductCard = ({ products }) => {
   const dispatch = useDispatch();
-  const [rating, setRating] = useState(products.rating); // Start with existing rating from product data
-  const [hoveredRating, setHoveredRating] = useState(0); // Track hovered stars
+  const [rating, setRating] = useState(products.rating);
+  const [hoveredRating, setHoveredRating] = useState(0);
 
   const handleStarClick = (value) => {
     setRating(value); // Update the rating
@@ -31,21 +31,24 @@ const ProductCard = ({ products }) => {
   };
 
   const renderStars = () => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <span
-        key={i + 1}
-        className={`cursor-pointer text-2xl transition-colors duration-150  ${
-          (hoveredRating > 0 ? i + 1 <= hoveredRating : i + 1 <= rating)
-            ? "text-yellow-500"
-            : "text-gray-300"
-        }`}
-        onClick={() => handleStarClick(i + 1)}
-        onMouseEnter={() => handleMouseEnter(i + 1)}
-        onMouseLeave={handleMouseLeave}
-      >
-        ★
-      </span>
-    ));
+    return Array.from({ length: 5 }, (_, i) => {
+      const isStarFilled =
+        hoveredRating > 0 ? i + 1 <= hoveredRating : i + 1 <= rating;
+
+      return (
+        <span
+          key={i + 1}
+          className={`cursor-pointer text-2xl ${
+            isStarFilled ? "text-yellow-500" : "text-gray-300"
+          }`}
+          onMouseEnter={() => setHoveredRating(i + 1)}
+          onMouseLeave={() => setHoveredRating(0)}
+          onClick={() => handleStarClick(i + 1)}
+        >
+          ★
+        </span>
+      );
+    });
   };
 
   return (
