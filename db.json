@@ -61,6 +61,30 @@
   ],
   "products": [
     {
+      "id": "p2",
+      "title": "Men's Casual Shirt",
+      "description": "Comfortable and stylish casual shirt for men, 100% cotton. available",
+      "price": "899",
+      "stock": "0",
+      "category": "Clothing",
+      "brand": "UrbanWear",
+      "rating": 1,
+      "images": "./src/assets/mans-tshirt.png"
+    },
+    {
+      "id": "p2gds",
+      "title": "Men's Casual Shirt",
+      "description": "Comfortable and stylish casual shirt for men, 100% cotton. available",
+      "price": "899",
+      "stock": "100",
+      "category": "Clothing",
+      "brand": "UrbanWear",
+      "rating": 4,
+      "images": [
+        "./src/assets/mans-tshirt.png"
+      ]
+    },
+    {
       "id": "p1",
       "title": "Wireless Headphones",
       "description": "High quality wireless headphones with noise cancellation and long battery life.",
@@ -68,22 +92,9 @@
       "stock": "25",
       "category": "Electronics",
       "brand": "SoundMax",
-      "rating": 4,
-      "images": [
-        "./src/assets/wirelessHeadphones.webp"
-      ]
-    },
-    {
-      "id": "p2",
-      "title": "Men's Casual Shirt",
-      "description": "Comfortable and stylish casual shirt for men, 100% cotton. available",
-      "price": "899",
-      "stock": "100",
-      "category": "Clothing",
-      "brand": "UrbanWear",
       "rating": 1,
       "images": [
-        "./src/assets/mans-tshirt.png"
+        "./src/assets/wirelessHeadphones.webp"
       ]
     },
     {
@@ -108,9 +119,7 @@
       "category": "Footwear",
       "brand": "RunnerX",
       "rating": 3,
-      "images": [
-        "./src/assets/shoes.png"
-      ]
+      "images": "./src/assets/shoes.png"
     }
   ],
   "cart": [

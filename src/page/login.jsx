@@ -8,6 +8,8 @@ import { toast, ToastContainer } from "react-toastify";
 
 import bcrypt from "bcryptjs";
 import { saveState } from "../store/session";
+import Nouserfound from "./error/no-userfound";
+import Loading from "./error/loading";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -35,6 +37,7 @@ const Login = () => {
       saveState(id);
       console.log("success");
       navigate("/");
+      window.location.reload();
     } else {
       toast.error("Invalid username or password");
       console.log("unsuccess");
@@ -43,10 +46,11 @@ const Login = () => {
 
   return (
     <>
+      {error && <Nouserfound />}
+      {loading && <Loading />}
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200">
         <ToastContainer />
 
-        {(loading && console.log("Loading..."), error && console.log("error"))}
         <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
           <h2 className="text-3xl font-extrabold text-center text-indigo-700 mb-6">
             Welcome Back

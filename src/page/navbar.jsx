@@ -3,6 +3,7 @@ import { clearState, loadState } from "../store/session";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchUsers } from "../Features/userSlice";
+import Loading from "./error/loading";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -17,15 +18,16 @@ const Navbar = () => {
   const currentUser = users.find((user) => user.id === id);
   // console.log(currentUser?.username);
 
-  if (loading) {
-    console.log("Loading...");
+  {
+    // loading ? <Loading /> : <ProductCard />;
   }
+
   if (error) {
     console.log("error");
   }
   const onClickLogout = () => {
     clearState();
-    navigate("/login");
+    window.location.reload();
   };
   return (
     <div className="bg-white shadow-md py-4 px-6">
@@ -40,12 +42,6 @@ const Navbar = () => {
             className="text-gray-600 hover:text-blue-600 transition duration-200"
           >
             Home
-          </Link>
-          <Link
-            to="/products"
-            className="text-gray-600 hover:text-blue-600 transition duration-200"
-          >
-            Products
           </Link>
           <Link
             to="/about"
@@ -84,7 +80,7 @@ const Navbar = () => {
             onClick={onClickLogout}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
           >
-            Login
+            Logout
           </button>
         </div>
       </div>

@@ -1,58 +1,14 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { updateProductratting } from "../Features/productsAPI";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ products }) => {
-  const dispatch = useDispatch();
-  const [rating, setRating] = useState(products.rating);
-  const [hoveredRating, setHoveredRating] = useState(0);
-
-  const handleStarClick = (value) => {
-    setRating(value); // Update the rating
-    dispatch(
-      updateProductratting({
-        id: products.id,
-        updatedData: {
-          ...products,
-          rating: value,
-        },
-      })
-    );
-  };
-
-  const handleMouseEnter = (value) => {
-    setHoveredRating(value);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredRating(0);
-  };
-
-  const renderStars = () => {
-    return Array.from({ length: 5 }, (_, i) => {
-      const isStarFilled =
-        hoveredRating > 0 ? i + 1 <= hoveredRating : i + 1 <= rating;
-
-      return (
-        <span
-          key={i + 1}
-          className={`cursor-pointer text-2xl ${
-            isStarFilled ? "text-yellow-500" : "text-gray-300"
-          }`}
-          onMouseEnter={() => setHoveredRating(i + 1)}
-          onMouseLeave={() => setHoveredRating(0)}
-          onClick={() => handleStarClick(i + 1)}
-        >
-          ★
-        </span>
-      );
-    });
-  };
-
+  
   return (
-    <div className="border border-gray-200 rounded-lg p-4 shadow w-full hover:shadow-md transition">
+    <Link
+      to={`${products.id}`}
+      className="border border-gray-200 rounded-lg p-4 shadow w-full hover:shadow-md transition"
+    >
       {/* Product Image */}
       <div className="mb-4 flex ">
         <div className="flex-1">
@@ -75,28 +31,7 @@ const ProductCard = ({ products }) => {
 
       {/* Product Price */}
       <p className="text-xl font-semibold text-green-500">₹{products.price}</p>
-
-      {/* Product Category */}
-      <p className="text-sm text-gray-500 mb-2">
-        Category: {products.category}
-      </p>
-
-      {/* Product Rating */}
-      <div className="mb-4">
-        <div className="flex items-center space-x-2">{renderStars()}</div>
-        <span className="text-gray-500">({rating})</span>
-      </div>
-
-      {/* Product Stock */}
-      <p className="text-sm text-gray-500 mb-4">
-        {products.stock > 0 ? `${products.stock} in stock` : "Out of stock"}
-      </p>
-
-      {/* Add to Cart Button */}
-      <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
-        Add to Cart
-      </button>
-    </div>
+    </Link>
   );
 };
 

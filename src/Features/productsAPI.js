@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getProduct = async () => {
-  const res = await fetch("/api/products");
+export const getProduct = async (isHome) => {
+  const res = await fetch(isHome ? "/api/products?_limit=3" : "/api/products");
   return res.json();
 };
 

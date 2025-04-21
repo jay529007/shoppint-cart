@@ -5,21 +5,25 @@ import "react-toastify/dist/ReactToastify.css";
 import { loadState } from "../store/session";
 import { useSelector } from "react-redux";
 import Login from "./login";
+import Loading from "./error/loading";
 
 const Mainlayout = () => {
   const id = loadState();
   const { users, loading, error } = useSelector((state) => state.users);
   const isLogin = users?.some((user) => user.id === id);
-  // console.log(isLogin);
-  if (loading) {
-    console.log("Loading..");
-  }
-  if (error) {
-    console.log("error");
-  }
+  // if (loading) {
+  //   <Loading />;
+  // }
+
+  // if (error) {
+  //   console.log("error");
+  //   // optionally return an error UI here
+  // }
 
   return (
     <>
+      {error && console.log("error")}
+      {loading && <Loading />}
       {isLogin ? (
         <>
           <Navbar />
